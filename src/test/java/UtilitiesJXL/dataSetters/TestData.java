@@ -1,12 +1,6 @@
-package exceltest;
-
-import jxl.write.Label;
-import jxl.write.WriteException;
+package UtilitiesJXL.dataSetters;
 
 import java.util.ArrayList;
-import static exceltest.ExcelReader.wrkbook;
-import static exceltest.ExcelReader.wrksheet;
-import static exceltest.ExcelReader.wwbCopy;
 
 public class TestData {
     private ArrayList<String> loginUser = null;
@@ -15,7 +9,6 @@ public class TestData {
     private ArrayList<String> element1 = null;
     private ArrayList<String> element2 = null;
     private ArrayList<String> element3 = null;
-
     public ArrayList<String> getLoginUser() {
         return loginUser;
     }
@@ -64,29 +57,5 @@ public class TestData {
         this.element3 = element3;
     }
 
-    public void setValueIntoCell(int ColumnNumber, int RowNumber,String Value) throws WriteException
-    {
-        Label label = new Label(ColumnNumber, RowNumber, Value);
-        try {
-            wrksheet.addCell(label);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
 
-    public void closeFile()
-    {
-        try {
-            // Closing the writable work book
-            wwbCopy.write();
-            wwbCopy.close();
-            wrkbook.close();
-        } catch (Exception e)
-
-        {
-            e.printStackTrace();
-        }
-    }
 }
