@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -20,16 +21,15 @@ public class ExcelReader {
             wrkbook = new XSSFWorkbook(file);
             wrksheet = wrkbook.getSheet("Sheet1");
         } catch (IOException e) {
-        throw new IOException();
+            throw new IOException();
         }
     }
-    public Cell getCell(int Column, int Row)
-    {
+
+    public Cell getCell(int Column, int Row) {
         return wrksheet.getRow(Row).getCell(Column);
     }
 
-    public void setValueIntoCell(int Column, int Row, String Value)
-    {
+    public void setValueIntoCell(int Column, int Row, String Value) {
         wrksheet.getRow(Row).getCell(Column).setCellValue(Value);
     }
 

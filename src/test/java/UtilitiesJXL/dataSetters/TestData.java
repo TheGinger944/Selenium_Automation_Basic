@@ -9,6 +9,7 @@ public class TestData {
     private ArrayList<String> element1 = null;
     private ArrayList<String> element2 = null;
     private ArrayList<String> element3 = null;
+
     public ArrayList<String> getLoginUser() {
         return loginUser;
     }
@@ -56,6 +57,4 @@ public class TestData {
     public void setElement3(ArrayList<String> element3) {
         this.element3 = element3;
     }
-
-
 }

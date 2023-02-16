@@ -11,7 +11,7 @@ import static UtilitiesJXL.ExcelReader.wwbCopy;
 import static UtilitiesJXL.ExcelReader.wrkbook;
 
 public class CommonMethods {
-    public void readExcelData (TestData data) {
+    public void readExcelData(TestData data) {
         ArrayList<String> browser = new ArrayList<String>();
         ArrayList<String> username = new ArrayList<String>();
         ArrayList<String> password = new ArrayList<String>();
@@ -36,27 +36,21 @@ public class CommonMethods {
         data.setElement3(element3);
     }
 
-    public void setValueIntoCell(int ColumnNumber, int RowNumber,String Value) throws WriteException
-    {
+    public void setValueIntoCell(int ColumnNumber, int RowNumber, String Value) throws WriteException {
         Label label = new Label(ColumnNumber, RowNumber, Value);
         try {
             wrksheet.addCell(label);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void closeFile()
-    {
+    public void closeFile() {
         try {
             wwbCopy.write();
             wwbCopy.close();
             wrkbook.close();
-        } catch (Exception e)
-
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
