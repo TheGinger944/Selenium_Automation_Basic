@@ -1,14 +1,13 @@
-package exceltest;
+package UtilitiesJXL;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
+
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import jxl.write.Label;
 import jxl.write.WritableWorkbook;
 import jxl.write.WritableSheet;
-import jxl.write.WriteException;
 
 public class ExcelReader {
     public static Workbook wrkbook;
